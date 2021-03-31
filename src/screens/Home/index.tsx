@@ -33,7 +33,9 @@ const HomeScreen = (props: HomeScreenProps) => {
 export default HomeScreen;
 
 const styles = StyleSheet.create({
-  container: {},
+  container: {
+    zIndex: 0
+  },
   image: {
     height: 500,
     width: "100%",
