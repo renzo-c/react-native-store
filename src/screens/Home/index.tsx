@@ -18,7 +18,7 @@ const HomeScreen = (props: HomeScreenProps) => {
           <Text style={styles.searchButtonText}>Where are you going?</Text>
         </Pressable>
       <ImageBackground
-        source={require("../../assets/images/juice-bottle.jpg")}
+        source={require("../../assets/images/exotic-soda.jpg")}
         style={styles.image}
       >
         <Text style={styles.title}>{`Go\nNear`}</Text>
@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
     zIndex: 0
   },
   image: {
-    height: 500,
+    height: 550,
     width: "100%",
     resizeMode: "cover",
     justifyContent: "center",
