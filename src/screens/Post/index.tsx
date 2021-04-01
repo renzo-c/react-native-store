@@ -1,29 +1,30 @@
 import React from "react";
 import { Text, View, StyleSheet, Image } from "react-native";
 
-interface PostScreenProps {}
+import { Post } from "../../types";
+interface PostScreenProps {
+  post: Post;
+}
 
 const PostScreen = (props: PostScreenProps) => {
+  const { post } = props;
+
   return (
     <View style={styles.container}>
       {/* <Text>Not just a postScreen</Text> */}
-      <Image
-        source={{ uri: "https://source.unsplash.com/daily?juice" }}
-        style={styles.image}
-      />
-      <Text style={styles.bedrooms}>1 bed - 1 bedrooms</Text>
+      <Image source={{ uri: post.image }} style={styles.image} />
+      <Text style={styles.bedrooms}>
+        {post.bed} bed - {post.bedroom} bedrooms
+      </Text>
 
       <Text style={styles.description} numberOfLines={2}>
-        It is a long established fact that a reader will be distracted by the
-        readable content of a page when looking at its layout. It is a long
-        established fact that a reader.
+        {post.type}. {post.description}
       </Text>
       <Text style={styles.prices}>
-        <Text style={styles.oldPrice}>$36</Text>
-        <Text style={styles.newPrice}>  $30 </Text>
-        / night
+        <Text style={styles.oldPrice}>${post.oldPrice}</Text>
+        <Text style={styles.newPrice}> ${post.newPrice} </Text>/ night
       </Text>
-      <Text style={styles.totalPrice}>$230 total</Text>
+      <Text style={styles.totalPrice}>${post.totalPrice} total</Text>
     </View>
   );
 };
@@ -36,7 +37,7 @@ const styles = StyleSheet.create({
   },
   bedrooms: {
     marginVertical: 10,
-    color: '#5b5b5b',
+    color: "#5b5b5b",
   },
   description: {
     fontSize: 18,
@@ -50,17 +51,17 @@ const styles = StyleSheet.create({
   },
   prices: {
     fontSize: 18,
-    marginVertical: 10
+    marginVertical: 10,
   },
   oldPrice: {
-    color: '#5b5b5b',
-    textDecorationLine: 'line-through',
+    color: "#5b5b5b",
+    textDecorationLine: "line-through",
   },
   newPrice: {
-    fontWeight: 'bold'
+    fontWeight: "bold",
   },
   totalPrice: {
-    color: '#5b5b5b',
-    textDecorationLine: 'underline',
+    color: "#5b5b5b",
+    textDecorationLine: "underline",
   },
 });
