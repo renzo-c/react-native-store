@@ -1,17 +1,13 @@
 import React from "react";
 import { Text, View, StyleSheet, Image } from "react-native";
 
-import { Post } from "../../types";
-interface PostScreenProps {
-  post: Post;
-}
+import { PostProps } from '../../types';
 
-const PostScreen = (props: PostScreenProps) => {
+const Post = (props: PostProps) => {
   const { post } = props;
 
   return (
     <View style={styles.container}>
-      {/* <Text>Not just a postScreen</Text> */}
       <Image source={{ uri: post.image }} style={styles.image} />
       <Text style={styles.bedrooms}>
         {post.bed} bed - {post.bedroom} bedrooms
@@ -20,16 +16,18 @@ const PostScreen = (props: PostScreenProps) => {
       <Text style={styles.description} numberOfLines={2}>
         {post.type}. {post.description}
       </Text>
+
       <Text style={styles.prices}>
         <Text style={styles.oldPrice}>${post.oldPrice}</Text>
         <Text style={styles.newPrice}> ${post.newPrice} </Text>/ night
       </Text>
+      
       <Text style={styles.totalPrice}>${post.totalPrice} total</Text>
     </View>
   );
 };
 
-export default PostScreen;
+export default Post;
 
 const styles = StyleSheet.create({
   container: {

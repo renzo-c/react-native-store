@@ -14,3 +14,7 @@ export type Post = {
       longitude: number,
     },
 }
+
+export type PostProps = {
+  post: Post;
+}
