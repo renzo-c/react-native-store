@@ -6,6 +6,7 @@ import HomeScreen from './src/screens/Home';
 import SearchResultsScreen from './src/screens/SearchResults';
 import Post from './src/components/Post';
 import DestinationSearchScreen from './src/screens/DestinationSearch';
+import Guests from './src/screens/Guests';
 
 import posts from './src/assets/data/feed';
 
@@ -14,7 +15,7 @@ export default function App() {
     <View style={styles.container}>
       <StatusBar style="auto" />
       <SafeAreaView>
-        <DestinationSearchScreen />
+        <Guests />
       </SafeAreaView>
     </View>
   );
