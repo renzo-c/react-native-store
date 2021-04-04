@@ -1,3 +1,15 @@
+export type MainStackParamList = {
+  HomeScreen: undefined;
+  DestinationSearchScreen: undefined;
+  GuestsScreen: undefined;
+};
+
+export type BottomTabParamList = {
+  Explore: undefined;
+  // Map: undefined;
+  // Checkout: undefined;
+};
+
 export type Post = {
     id: string,
     image: string,

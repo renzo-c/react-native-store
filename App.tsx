@@ -1,23 +1,18 @@
+import 'react-native-gesture-handler';
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { SafeAreaView, StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text } from 'react-native';
 
-import HomeScreen from './src/screens/Home';
-import SearchResultsScreen from './src/screens/SearchResults';
-import Post from './src/components/Post';
-import DestinationSearchScreen from './src/screens/DestinationSearch';
-import Guests from './src/screens/Guests';
+import Router from "./src/navigation/Router";
 
 import posts from './src/assets/data/feed';
 
 export default function App() {
   return (
-    <View style={styles.container}>
+    <>
       <StatusBar style="auto" />
-      <SafeAreaView>
-        <Guests />
-      </SafeAreaView>
-    </View>
+      <Router />
+    </>
   );
 }
 

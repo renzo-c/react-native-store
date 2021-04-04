@@ -11,9 +11,11 @@ import Fontisto from 'react-native-vector-icons/Fontisto'
 interface HomeScreenProps {}
 
 const HomeScreen = (props: HomeScreenProps) => {
+  const {navigation} = props;
+
   return (
     <View style={styles.container}>
-      <Pressable onPress={() => console.warn("button")} style={styles.searchButton}>
+      <Pressable onPress={() => navigation.navigate("Destination Search")} style={styles.searchButton}>
         <Fontisto name="search" size={25} color="#f15454" />
           <Text style={styles.searchButtonText}>Where are you going?</Text>
         </Pressable>
@@ -74,7 +76,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     flexDirection: "row",
     position: "absolute",
-    top: 20,
+    top: 50,
     zIndex: 10,
     width: Dimensions.get('window').width - 20,
     marginHorizontal: 10
